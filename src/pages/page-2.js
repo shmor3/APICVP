@@ -1,15 +1,14 @@
 import * as React from "react"
-import { Link } from "gatsby"
-
+import BackgroundVideo from "../components/BackgroundVideo"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const SecondPage = () => (
   <Layout>
-    <Seo title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <Seo title="Home" />
+    <BackgroundVideo poster={''}>
+        {'https://ucarecdn.com/f252fa50-8a88-471e-8a38-027617707810/yt5scomAnimationCaffeinated2019DemoReel360p.mp4' && <source src={'https://ucarecdn.com/f252fa50-8a88-471e-8a38-027617707810/yt5scomAnimationCaffeinated2019DemoReel360p.mp4'} type="video/mp4" />}
+      </BackgroundVideo>
   </Layout>
 )
 
