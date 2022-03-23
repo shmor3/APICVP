@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import Image from './Image'
 
 import './BackgroundVideo.css'
-
 class BackgroundVideo extends Component {
   
   constructor(props) {
@@ -38,15 +37,16 @@ class BackgroundVideo extends Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateDimensions)
   }
+
   render() {
-    const { children } = this.props
+    const { poster, children } = this.props
     return (
       <Fragment >
         {!this.state.mobileWidth && (
           <div className={`BackgroundVideo`}>
             <video
               ref={this.ref}
-              poster={''}
+              poster={poster}
               className={`BackgroundVideo--video ${
                 this.state.playing ? 'playing' : ''
               } `}
@@ -62,7 +62,7 @@ class BackgroundVideo extends Component {
         )}
         {this.state.mobileWidth && (
           <Fragment>
-            <Image background src={''} alt="Background poster" />
+            <Image background src={poster} alt="Background poster" />
           </Fragment>
         )}
       </Fragment>
